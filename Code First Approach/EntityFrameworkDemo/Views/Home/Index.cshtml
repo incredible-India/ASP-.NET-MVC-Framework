@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EntityFrameworkDemo.Models.StudentInfo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Gender</td>
+    </tr>
+
+   
+        @{ 
+            foreach (var item in Model)
+            {
+            <tr>
+                <th>@item.id</th>
+                <th>@item.name</th>
+                <th>@item.age</th>
+                <th>@item.gender</th>
+            </tr>
+
+
+
+
+            }
+        }
+    
+</table>
