@@ -1,0 +1,33 @@
+﻿@model WebApplication1.Models.Emp
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Contact</h2>
+
+
+@using (Html.BeginForm())
+{
+
+    <p>@Html.LabelFor(model => model.name) &nbsp; @Html.TextBoxFor(model => model.last)  </p>
+}
+
+
+@using (Html.BeginForm("Contact", "Home"))
+{
+    <p>Name</p>
+    @Html.ValidationSummary();
+
+    @Html.TextBox("fname");
+    @Html.ValidationMessage("fname")
+    <p>Lname</p>
+    @Html.TextBox("lname");
+    @Html.ValidationMessage("lname")
+    <input type="submit" value="submit" />
+
+}
+
+@Html.Raw(ViewData["s"])
+@Html.Partial("_pt")
+
+@Html.ActionLink("Home Page", "Index", "Home")

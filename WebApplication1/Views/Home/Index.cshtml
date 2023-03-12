@@ -1,0 +1,56 @@
+﻿
+@{
+
+
+    ViewBag.Title = "Index";
+}
+
+
+
+<title>hello</title>
+<h2>Index</h2>
+@Html.TextBox("Fisrt Name", null, new {
+
+    @class = "form-control"
+
+})
+
+@Html.ActionLink("Go to contact", "Contact", "Home")
+@Html.ActionLink("Goto abput", "About", "Home");
+@{Html.RenderPartial("_pt");}
+<a href="@Url.Action("About","home")">Go to home url action</a>
+
+<p>Hello today is @DateTime.Now</p>
+
+@{
+    string[] hello = new string[] { "Himanshu", "Sharma", "Kumar" };
+
+    var i = 5;
+
+    <h1>@i</h1>
+}
+
+<h1>Hello I am the session Data @Session["o"]</h1>
+
+@{
+    foreach (var p in hello)
+    {
+        <li>@p</li>
+    }
+}
+
+
+<p>View Data Info</p>
+
+@{ 
+    <h2>@ViewData["hello"]</h2>
+
+    foreach (var item in (List<string>)ViewData["a"])
+    {
+        <li>@item</li>
+    }
+
+    var a = (WebApplication1.Models.Emp)ViewData["op"];
+
+    <h1>The name is @a.name</h1>
+}

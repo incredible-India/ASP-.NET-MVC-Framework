@@ -1,0 +1,23 @@
+﻿@model WebApplication1.Models.stu
+@{
+    ViewBag.Title = "Student";
+}
+
+<h2>Student</h2>
+
+@using (Html.BeginForm("Student", "Home"))
+{
+
+    <p> @Html.LabelFor(model => model.fname) </p>
+    <p>@Html.TextBoxFor(model => model.fname, "")</p>
+
+    @Html.ValidationMessageFor(model => model.fname)
+
+    <p> @Html.LabelFor(model => model.lname) </p>
+    <p>@Html.EditorFor(model => model.lname)</p>
+    @Html.ValidationMessageFor(model => model.lname)
+
+    <input type="submit" value="submit" />
+
+
+}
